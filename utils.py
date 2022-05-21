@@ -38,13 +38,13 @@ def array_to_number(arr: List[int]):
     """
     parsed_number = str()
     for number in arr:
-        parsed_number = f'{parsed_number}{convert_to_ascii(number)}00'
-    return parsed_number
+        parsed_number = f'{parsed_number}{convert_to_ascii(number)}58'
+    return parsed_number.strip('58')
 
 
 def number_to_array(number: str) -> List[int]:
     """
     convert number to list of integers.
     """
-    ascii_codes = number.strip('00').split('00')
+    ascii_codes = number.strip('58').split('58')
     return [ascii_to_digit(ascii_code) for ascii_code in ascii_codes]
